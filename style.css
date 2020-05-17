@@ -1,1 +1,148 @@
+:root {
+    --black: #131313;
+    --yellow: #ffdd33;
+    --red: #ff4422;
+    --white: #fefefe;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= ALL STYLES ==================================================== */
+
+body {
+    background: (var--white);
+    position: relative;
+}
+
+.span-column-2 {
+    grid-column: span 2;
+}
+
+.span-row-2 {
+    grid-row: span 2;
+}
+
+/* =============================== NAV ============================== */
+
+/*  first nav */
+.first-nav {
+    width: 100%;
+    height: 32px;
+    background: var(--black);
+}
+
+
+/* sticky nav */
+div.sticky-nav {
+    position: sticky;
+    top: 0;
+    height: 78px;
+    display: grid;
+    grid-template-rows: 48px 30px;
+    z-index: 999;
+}
+
+.sticky-nav-up {
+    top: 1px;
+    background: var(--white);
+}
+
+.sticky-nav-down {
+    background: var(--yellow);
+}
+
+/* ============================= END NAV =========================== */
+
+/* ============================= MAIN ==================================================================== */
+main {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ========================= SECTION - HEAD ======================== */
+section.head-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
+}
+
+@media (max-width: 760px){
+    section.head-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+/* ======================= ARTICLE - HEAD SECTION ================== */
+.head-section article {
+    background: red;
+    width: 100%;
+    min-height: 225px;
+}
+
+@media (min-width: 1550px){
+    .head-section article {
+        min-height: 203px;
+    }
+}
+
+@media (max-width: 760px){
+    .head-section article:first-child {
+        grid-row: span 1;
+    }
+}
+
+/* ==================== END HEAD SECTION =========================== */
+
+/* ========================================== WRAPER =================================================== */
+.wraper {
+    margin: 20px auto;
+    max-width: 1152px;
+    height: auto;
+}
+
+/* ================= LATEST NEWS SECTION ========================== */
+
+.news {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.news header h2 {
+    color: red;
+}
+
+.news-wraper {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(227px, 1fr));
+    grid-template-rows: repeat(2, 227px);
+    grid-auto-rows: 227px;
+    gap: 10px 10px;
+    justify-content: center;
+}
+
+@media (max-width: 760px){
+    .news-wraper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 72px;
+        grid-auto-rows: 72px;
+    }
+}
+
+.news-content {
+    background: green;
+    height: 100%;
+    width: 100%;
+};
